@@ -69,7 +69,7 @@ function MainPage({cardsToRender}: MainPageProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {new Array(cardsToRender).fill(0).map(() => <PlaceCard key={`card-${new Date().getTime().toString()}`}/>)}
+                {Array.from({length: cardsToRender}, (element,index) => <PlaceCard key={`card-${index}`}/>)}
               </div>
             </section>
             <div className="cities__right-section">
